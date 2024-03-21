@@ -16,7 +16,7 @@ pipeline {
 
         stage('Deployment') {
             steps {
-                withCredentials([file(credentialsId: 'kube-config', variable: 'KUBECONFIG')]){
+                withCredentials([file(credentialsId: 'kube', variable: 'KUBECONFIG')]){
                     sh """
                         mv kube-manifist/Deployment.yml kube-manifist/Deployment.yml.tmp
                         cat kube-manifist/Deployment.yml.tmp | envsubst > kube-manifist/Deployment.yml
