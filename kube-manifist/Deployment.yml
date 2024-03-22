@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: demo-deploy
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: myapp
@@ -15,9 +15,16 @@ spec:
     spec:
       containers: 
         - name: myapp-container
-          image: dayem:1.0
+          image: mahmeddayem/app:v${BUILD_NUMBER}
           ports:
             - containerPort: 80
+          resources:
+            requests:
+              memory: "25Mi"
+              cpu: "25m"
+            limits:
+              memory: "50Mi"
+              cpu: "50m"   
 
 
     
