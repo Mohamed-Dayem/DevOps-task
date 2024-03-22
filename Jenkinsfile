@@ -18,8 +18,8 @@ pipeline {
             steps {
                 withCredentials([file(credentialsId: 'kube', variable: 'KUBECONFIG')]){
                     sh """
-                        mv kube-manifist/Deployment.yml kube-manifist/Deployment.yml.tmp
-                        cat kube-manifist/Deployment.yml.tmp | envsubst > kube-manifist/Deployment.yml
+                        mv kube-manifist/Deployment.yaml kube-manifist/Deployment.yaml.tmp
+                        cat kube-manifist/Deployment.yaml.tmp | envsubst > kube-manifist/Deployment.yaml
                         rm -rf kube-manifist/Deployment.yml.tmp
                         kubectl apply -f kube-manifist --kubeconfig=${KUBECONFIG}
                     """
