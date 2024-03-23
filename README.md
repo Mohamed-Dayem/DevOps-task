@@ -10,6 +10,11 @@ the first step
 
 at the build step, I create credentials in Jenkins for my Docker Hub Repo to push my image
 
+the repo for the docker image
+https://hub.docker.com/repository/docker/mahmeddayem/app/general
+
+
+
 the second step
 ![ddd](https://github.com/Mohamed-Dayem/DevOps-task/assets/141914187/7b98eb6e-a7b9-4a5c-9f33-666da6fe0dac)
 
